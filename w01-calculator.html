@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W01: Calculator</title>
+</head>
+<body>
+    <h1>W01: Calculator Activity form "Object Methods, 'this'"</h1>
+    <button onclick = "calc()">Start Calculator</button>
+</body>
+<script>
+    function calc() {
+        let calculator = {
+            sum() {
+            return this.a + this.b;
+            },
+
+            mul() {
+            return this.a * this.b;
+            },
+
+            sub() {
+            return this.a - this.b;
+            },
+
+            div() {
+            return this.a / this.b;
+            },
+
+            read() {
+            this.a = parseInt(prompt('Enter the first integer:', 0));
+            this.b = parseInt(prompt('Enter the second integer:', 0));
+            }
+        };
+
+        calculator.read();
+        alert("Sum: " + calculator.sum() + "\n" +
+            "Product: " + calculator.mul() + "\n" +
+            "Difference: " + calculator.sub() + "\n" +
+            "Quotient: " + calculator.div()
+        );
+    }
+
+</script>
+</html>
